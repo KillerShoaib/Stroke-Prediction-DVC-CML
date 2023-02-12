@@ -43,11 +43,12 @@ def build_csv(input, output):
         dftrain[col] = le.fit_transform(dftrain[col])
 
     # saving the file in feature folder
+    if not (os.path.exists(output)):
+        os.mkdir(output)
 
-    # output_loc = os.path.join(output, "preprocessed.csv")
-    # sys.stderr.write(f"{output_loc}\n")
-    dftrain.to_csv("preprocessed.csv", index=False)
-    # sys.stderr.write(f"File preprocessed to {output_loc} dir\n")
+    output_loc = os.path.join(output, "preprocessed.csv")
+    dftrain.to_csv(output_loc, index=False)
+    sys.stderr.write(f"File preprocessed to {output_loc} dir\n")
 
 
 if __name__ == '__main__':
