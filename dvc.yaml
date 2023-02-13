@@ -1,8 +1,11 @@
 stages:
   preprocess:
-    cmd: python3 src/preprocess.py data/train.csv feature/preprocess
+    cmd: python3 src/preprocess.py 
     deps:
       - src/preprocess.py
       - data/
+    params:
+      - preprocess.input
+      - preprocess.output
     outs:
       - feature/preprocess

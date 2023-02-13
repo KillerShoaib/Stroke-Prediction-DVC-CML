@@ -1,0 +1,3 @@
+preprocess:
+  input: data/train.csv
+  output: feature/preprocess

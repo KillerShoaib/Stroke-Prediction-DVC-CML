@@ -3,16 +3,18 @@ from sklearn.preprocessing import LabelEncoder
 import sys
 import logging
 import os
+import yaml
 
-if (len(sys.argv) != 3):
-    logging.error("Arguments Error \n")
-    sys.stderr.write("Usage: \t python3 preprocess.py data/ output/")
-    sys.exit(1)
+# if (len(sys.argv) != 3):
+#     logging.error("Arguments Error \n")
+#     sys.stderr.write("Usage: \t python3 preprocess.py data/ output/")
+#     sys.exit(1)
 
 # arguments
+params = yaml.safe_load(open('params.yaml'))['preprocess']
 
-input_file = sys.argv[1]
-output_loc = sys.argv[2]
+input_file = params['input']
+output_loc = params['output']
 
 
 def build_csv(input, output):
