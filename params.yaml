@@ -1,3 +1,9 @@
 preprocess:
   input: data/train.csv
   output: feature/preprocess
+
+split:
+  n_splits: 5
+  csv_path: feature/preprocess/preprocessed.csv
+  train_path: split/train
+  test_path: split/test

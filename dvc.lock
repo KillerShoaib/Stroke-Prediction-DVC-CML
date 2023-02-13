@@ -19,3 +19,19 @@ stages:
       md5: afa9a4fd3d2ea147cfd7e83ad561d4be.dir
       size: 754598
       nfiles: 1
+  split:
+    cmd: python3 src/split.py
+    deps:
+    - path: feature/preprocess
+      md5: afa9a4fd3d2ea147cfd7e83ad561d4be.dir
+      size: 754598
+      nfiles: 1
+    - path: src/split.py
+      md5: 3d95e52d089ade88e72b974f2829cb9d
+      size: 958
+    params:
+      params.yaml:
+        split.csv_path: feature/preprocess/preprocessed.csv
+        split.n_splits: 5
+        split.test_path: split/test
+        split.train_path: split/train

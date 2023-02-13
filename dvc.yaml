@@ -9,3 +9,14 @@ stages:
       - preprocess.output
     outs:
       - feature/preprocess
+  
+  split:
+    cmd: python3 src/split.py
+    deps:
+      - src/split.py
+      - feature/preprocess
+    params:
+      - split.n_splits
+      - split.csv_path
+      - split.train_path
+      - split.test_path
