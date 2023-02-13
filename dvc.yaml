@@ -20,3 +20,6 @@ stages:
       - split.csv_path
       - split.train_path
       - split.test_path
+    outs:
+      - split/train
+      - split/test

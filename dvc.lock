@@ -35,3 +35,12 @@ stages:
         split.n_splits: 5
         split.test_path: split/test
         split.train_path: split/train
+    outs:
+    - path: split/test
+      md5: 598bf3387cdefadfd058644b2c77c2dd.dir
+      size: 149123
+      nfiles: 1
+    - path: split/train
+      md5: e2cec17c151195e8d9e6549cbe359e5f.dir
+      size: 605640
+      nfiles: 1
