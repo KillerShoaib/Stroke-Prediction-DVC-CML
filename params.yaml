@@ -7,3 +7,15 @@ split:
   csv_path: feature/preprocess/preprocessed.csv
   train_path: split/train
   test_path: split/test
+
+train:
+  cv: 5
+  model_path: model
+  train_csv: split/train/train_split.csv
+  n_estimators: 150
+  criterion: "entropy"
+  max_depth: 10
+  min_samples_split: 50
+  min_samples_leaf: 10
+  bootstrap: "True"
+  random_state: 42

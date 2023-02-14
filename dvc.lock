@@ -44,3 +44,30 @@ stages:
       md5: e2cec17c151195e8d9e6549cbe359e5f.dir
       size: 605640
       nfiles: 1
+  train:
+    cmd: python3 src/trainning.py
+    deps:
+    - path: split/train
+      md5: e2cec17c151195e8d9e6549cbe359e5f.dir
+      size: 605640
+      nfiles: 1
+    - path: src/trainning.py
+      md5: 68cc058fcaf4b1da223c11ec02b93d0e
+      size: 1911
+    params:
+      params.yaml:
+        train.bootstrap: 'True'
+        train.criterion: entropy
+        train.cv: 5
+        train.max_depth: 10
+        train.min_samples_leaf: 10
+        train.min_samples_split: 50
+        train.model_path: model
+        train.n_estimators: 150
+        train.random_state: 42
+        train.train_csv: split/train/train_split.csv
+    outs:
+    - path: model/
+      md5: aacbcc45cb48111779cdaacc220e7e47.dir
+      size: 1547357
+      nfiles: 1

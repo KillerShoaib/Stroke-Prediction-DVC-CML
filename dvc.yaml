@@ -23,3 +23,22 @@ stages:
     outs:
       - split/train
       - split/test
+    
+  train:
+    cmd: python3 src/trainning.py
+    deps:
+      - src/trainning.py
+      - split/train
+    params:
+      - train.cv
+      - train.model_path
+      - train.train_csv
+      - train.n_estimators
+      - train.criterion
+      - train.max_depth
+      - train.min_samples_split
+      - train.min_samples_leaf
+      - train.bootstrap
+      - train.random_state
+    outs:
+      - model/
