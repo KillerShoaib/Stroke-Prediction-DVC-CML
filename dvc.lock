@@ -71,3 +71,25 @@ stages:
       md5: aacbcc45cb48111779cdaacc220e7e47.dir
       size: 1547357
       nfiles: 1
+  eval:
+    cmd: python3 src/eval.py
+    deps:
+    - path: model/model.pkl
+      md5: ce7a5efd7d26d8debcd5c32c8cc07f01
+      size: 1547357
+    - path: split/test/eval.csv
+      md5: 7f770a671d485a69b2d0522fcbbbf4b7
+      size: 149123
+    - path: src/eval.py
+      md5: 62d66c37ef38915aa37c3a22b8717e19
+      size: 1292
+    params:
+      params.yaml:
+        eval.eval_csv: split/test/eval.csv
+        eval.model_path: model/model.pkl
+        eval.score: metrics/
+    outs:
+    - path: metrics/
+      md5: 506b6d801e31ed44b667f219d4fcdf73.dir
+      size: 19843
+      nfiles: 2

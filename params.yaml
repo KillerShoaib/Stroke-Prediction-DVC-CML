@@ -19,3 +19,8 @@ train:
   min_samples_leaf: 10
   bootstrap: "True"
   random_state: 42
+
+eval:
+  model_path: "model/model.pkl"
+  eval_csv: "split/test/eval.csv"
+  score: "metrics/"

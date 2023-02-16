@@ -42,3 +42,16 @@ stages:
       - train.random_state
     outs:
       - model/
+  
+  eval:
+    cmd: python3 src/eval.py
+    deps:
+      - src/eval.py
+      - split/test/eval.csv
+      - model/model.pkl
+    params:
+      - eval.model_path
+      - eval.eval_csv
+      - eval.score
+    outs:
+      - metrics/
