@@ -59,24 +59,24 @@ stages:
         train.bootstrap: 'True'
         train.criterion: entropy
         train.cv: 5
-        train.max_depth: 10
+        train.max_depth: 15
         train.min_samples_leaf: 10
         train.min_samples_split: 50
         train.model_path: model
-        train.n_estimators: 150
+        train.n_estimators: 250
         train.random_state: 42
         train.train_csv: split/train/train_split.csv
     outs:
     - path: model/
-      md5: aacbcc45cb48111779cdaacc220e7e47.dir
-      size: 1547357
+      md5: 3b1f0ab2fc936a6d7a680e14adae1591.dir
+      size: 3410920
       nfiles: 1
   eval:
     cmd: python3 src/eval.py
     deps:
     - path: model/model.pkl
-      md5: ce7a5efd7d26d8debcd5c32c8cc07f01
-      size: 1547357
+      md5: fc65c0b29dae1fcd776974c8848a8374
+      size: 3410920
     - path: split/test/eval.csv
       md5: 7f770a671d485a69b2d0522fcbbbf4b7
       size: 149123
@@ -90,6 +90,6 @@ stages:
         eval.score: metrics/
     outs:
     - path: metrics/
-      md5: 506b6d801e31ed44b667f219d4fcdf73.dir
-      size: 19843
+      md5: 8cedfa00babd1255cfb949e484a20ace.dir
+      size: 19455
       nfiles: 2
