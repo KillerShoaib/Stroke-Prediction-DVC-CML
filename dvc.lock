@@ -89,7 +89,6 @@ stages:
         eval.model_path: model/model.pkl
         eval.score: metrics/
     outs:
-    - path: metrics/
-      md5: 8cedfa00babd1255cfb949e484a20ace.dir
-      size: 19455
-      nfiles: 2
+    - path: metrics/metrics.json
+      md5: cdf30a7577a2ed719a56ceb639050570
+      size: 27

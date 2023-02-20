@@ -53,5 +53,6 @@ stages:
       - eval.model_path
       - eval.eval_csv
       - eval.score
-    outs:
-      - metrics/
+    metrics:
+      - metrics/metrics.json:
+          cache: false
