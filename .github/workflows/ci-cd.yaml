@@ -19,6 +19,7 @@ jobs:
           GDRIVE_CREDENTIALS_DATA: ${{ secrets.GDRIVE_AUTH }}
         run: |
           dvc pull
+          pip install --upgrade pip
           pip install -r requirements.txt
           dvc repro
           
