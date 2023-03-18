@@ -27,6 +27,6 @@ jobs:
           dvc metrics diff main --md >> report.md
 
           echo "## ROC Curve" >> report.md
-          cml comment ./metrics/metrics.png --md >> report.md
+          cml-publish ./metrics/metrics.png --md >> report.md
           
           cml comment create report.md
