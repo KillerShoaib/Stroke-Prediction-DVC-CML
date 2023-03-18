@@ -1,5 +1,9 @@
 name: Stroke Predictions
-on: [push]
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
 jobs:
   run:
     runs-on: [ubuntu-latest]
