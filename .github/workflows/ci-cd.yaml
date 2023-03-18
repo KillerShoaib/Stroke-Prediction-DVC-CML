@@ -1,9 +1,6 @@
 name: Stroke Predictions
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -24,9 +21,10 @@ jobs:
           dvc repro
           dvc push
           
-          echo "## Model metrics" > report.md
-          dvc metrics diff --show-md >> report.md
-          echo >> report.md
+          # Report metrics
+          echo "## Metrics" >> report.md
+          git fetch --prune
+          dvc metrics diff main --show-md >> report.md
 
           
           cml comment create report.md
