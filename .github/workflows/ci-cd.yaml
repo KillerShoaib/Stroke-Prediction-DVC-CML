@@ -24,7 +24,9 @@ jobs:
           # Report metrics
           echo "## Metrics" >> report.md
           git fetch --prune
-          dvc metrics diff main --show-md >> report.md
+          dvc metrics diff main --md >> report.md
 
+          echo "## ROC Curve" >> report.md
+          cml-publish ./metrics/metrics.png --md >> report.md
           
           cml comment create report.md
