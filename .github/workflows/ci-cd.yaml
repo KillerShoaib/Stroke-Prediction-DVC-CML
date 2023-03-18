@@ -22,10 +22,11 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
           dvc repro
+          dvc push
           
           echo "## Model metrics" > report.md
-          dvc metrics show --show-md >> report.md
+          dvc metrics diff --show-md >> report.md
           echo >> report.md
 
           
-          cml-send-comment report.md
+          cml comment create report.md
