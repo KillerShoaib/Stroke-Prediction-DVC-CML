@@ -2,3 +2,4 @@
     remote = stroke_prediction
 ['remote "stroke_prediction"']
     url = gdrive://1Z9ZGGdo55HJ84TsBu_EnpFUr0DBXIx6m
+    gdrive_use_service_account = true
