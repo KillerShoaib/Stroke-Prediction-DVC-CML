@@ -1,5 +1,5 @@
 import pandas as pd
-from sklearn.ensemble import RandomForestClassifier
+import xgboost as xgb
 from sklearn.metrics import roc_auc_score, roc_curve
 import json
 import pickle
@@ -31,10 +31,10 @@ test.drop(columns=['id', 'stroke'], inplace=True)
 
 # predict
 
-y_pred = model.predict_proba(test)
+y_pred = model.predict(xgb.DMatrix(test))
 
-roc_score = roc_auc_score(y_true, y_pred[:, 1])
-fpr, tpr, _ = roc_curve(y_true, y_pred[:, 1])
+roc_score = roc_auc_score(y_true, y_pred)
+fpr, tpr, _ = roc_curve(y_true, y_pred)
 
 
 # creating the folders
