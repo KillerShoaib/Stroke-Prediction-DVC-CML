@@ -12,13 +12,13 @@ train:
   cv: 5
   model_path: model
   train_csv: split/train/train_split.csv
-  n_estimators: 150
-  criterion: "entropy"
-  max_depth: 12
-  min_samples_split: 50
-  min_samples_leaf: 10
-  bootstrap: "True"
-  random_state: 42
+  num_boost_round: 100
+  max_depth: 4
+  learning_rate: 0.05
+  objective: 'binary:logistic'
+  verbosity: 0
+  eval_metric: 'auc'
+  early_stopping_rounds: 150
 
 eval:
   model_path: "model/model.pkl"

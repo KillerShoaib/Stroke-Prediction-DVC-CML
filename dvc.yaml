@@ -33,13 +33,13 @@ stages:
       - train.cv
       - train.model_path
       - train.train_csv
-      - train.n_estimators
-      - train.criterion
+      - train.num_boost_round
       - train.max_depth
-      - train.min_samples_split
-      - train.min_samples_leaf
-      - train.bootstrap
-      - train.random_state
+      - train.learning_rate
+      - train.objective
+      - train.verbosity
+      - train.eval_metric
+      - train.early_stopping_rounds
     outs:
       - model/
   
@@ -54,5 +54,5 @@ stages:
       - eval.eval_csv
       - eval.score
     metrics:
-      - metrics/metrics.json:
-          cache: false
+      - metrics/metrics.json
+          
