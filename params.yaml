@@ -12,7 +12,7 @@ train:
   cv: 5
   model_path: model
   train_csv: split/train/train_split.csv
-  num_boost_round: 250
+  num_boost_round: 100
   max_depth: 4
   learning_rate: 0.05
   objective: 'binary:logistic'
