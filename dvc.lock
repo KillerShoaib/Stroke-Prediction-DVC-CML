@@ -52,8 +52,8 @@ stages:
       size: 605640
       nfiles: 1
     - path: src/trainning.py
-      md5: 99cb69d6b8fe5e39a861a882ca450a39
-      size: 2166
+      md5: 753448a523c237fdc5808d44775b939e
+      size: 2133
     params:
       params.yaml:
         train.cv: 5
@@ -68,21 +68,21 @@ stages:
         train.verbosity: 0
     outs:
     - path: model/
-      md5: 2e3127fe125605f4498b7664319fa1a6.dir
-      size: 5
+      md5: 16b0f31a59d51a377f4657b1d0253b69.dir
+      size: 238157
       nfiles: 1
   eval:
     cmd: python3 src/eval.py
     deps:
     - path: model/model.pkl
-      md5: e79c3987797b7ba595b245a19cc68d5a
-      size: 1833953
+      md5: 668bd475c10086ae4b6dfd34ddcb3e4f
+      size: 238157
     - path: split/test/eval.csv
       md5: 7f770a671d485a69b2d0522fcbbbf4b7
       size: 149123
     - path: src/eval.py
-      md5: 62d66c37ef38915aa37c3a22b8717e19
-      size: 1292
+      md5: 7e4f26532114405621df544335875296
+      size: 1257
     params:
       params.yaml:
         eval.eval_csv: split/test/eval.csv
@@ -90,5 +90,5 @@ stages:
         eval.score: metrics/
     outs:
     - path: metrics/metrics.json
-      md5: 7b83bb0e5e48ba26716a7be496f31b7a
+      md5: 3ccc6d7d9f511f234ae9838dfeeb123b
       size: 27
