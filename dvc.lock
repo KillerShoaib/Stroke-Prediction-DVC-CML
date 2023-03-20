@@ -52,24 +52,24 @@ stages:
       size: 605640
       nfiles: 1
     - path: src/trainning.py
-      md5: 68cc058fcaf4b1da223c11ec02b93d0e
-      size: 1911
+      md5: 99cb69d6b8fe5e39a861a882ca450a39
+      size: 2166
     params:
       params.yaml:
-        train.bootstrap: 'True'
-        train.criterion: entropy
         train.cv: 5
-        train.max_depth: 12
-        train.min_samples_leaf: 10
-        train.min_samples_split: 50
+        train.early_stopping_rounds: 150
+        train.eval_metric: auc
+        train.learning_rate: 0.05
+        train.max_depth: 4
         train.model_path: model
-        train.n_estimators: 150
-        train.random_state: 42
+        train.num_boost_round: 700
+        train.objective: binary:logistic
         train.train_csv: split/train/train_split.csv
+        train.verbosity: 0
     outs:
     - path: model/
-      md5: b3b3abe9bbba5d6f3b14058d90bcae19.dir
-      size: 1833953
+      md5: 2e3127fe125605f4498b7664319fa1a6.dir
+      size: 5
       nfiles: 1
   eval:
     cmd: python3 src/eval.py

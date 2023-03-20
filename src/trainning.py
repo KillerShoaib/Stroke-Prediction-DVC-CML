@@ -79,7 +79,6 @@ for i, (train, val) in enumerate(skf.split(X, y)):
     y_pred = model.predict(val_set)
 
     score = roc_auc_score(y_val, y_pred)
-    model = model.best_iteration
 
     logging.info(f"AUC Score for {i}th iteration = {score}")
 

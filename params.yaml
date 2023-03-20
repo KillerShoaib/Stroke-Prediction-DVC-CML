@@ -15,7 +15,7 @@ train:
   num_boost_round: 700
   max_depth: 4
   learning_rate: 0.05
-  objective: 'binary:logistc'
+  objective: 'binary:logistic'
   verbosity: 0
   eval_metric: 'auc'
   early_stopping_rounds: 150
