@@ -116,6 +116,7 @@ urllib3==1.26.14
 vine==5.0.0
 voluptuous==0.13.1
 wcwidth==0.2.6
+xgboost==1.7.4
 yarl==1.8.2
 zc.lockfile==2.0
 zipp==3.13.0
