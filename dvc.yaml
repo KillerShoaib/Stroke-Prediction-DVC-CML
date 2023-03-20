@@ -54,5 +54,5 @@ stages:
       - eval.eval_csv
       - eval.score
     metrics:
-      - metrics/metrics.json:
-          cache: false
+      - metrics/metrics.json
+          
