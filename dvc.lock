@@ -81,14 +81,19 @@ stages:
       md5: 7f770a671d485a69b2d0522fcbbbf4b7
       size: 149123
     - path: src/eval.py
-      md5: 62d66c37ef38915aa37c3a22b8717e19
-      size: 1292
+      md5: 897d43de2c23c8067f0046077f8984e3
+      size: 1365
     params:
       params.yaml:
         eval.eval_csv: split/test/eval.csv
         eval.model_path: model/model.pkl
+        eval.png: evalMetricsPNG/
         eval.score: metrics/
     outs:
+    - path: evalMetricsPNG/
+      md5: 24943f16504bb7202374cc37a8d032e5.dir
+      size: 19162
+      nfiles: 1
     - path: metrics/metrics.json
       md5: 7b83bb0e5e48ba26716a7be496f31b7a
       size: 27

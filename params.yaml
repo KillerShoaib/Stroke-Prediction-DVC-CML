@@ -24,3 +24,4 @@ eval:
   model_path: "model/model.pkl"
   eval_csv: "split/test/eval.csv"
   score: "metrics/"
+  png : "evalMetricsPNG/"
