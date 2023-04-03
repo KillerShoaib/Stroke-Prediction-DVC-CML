@@ -12,7 +12,7 @@ train:
   cv: 5
   model_path: model
   train_csv: split/train/train_split.csv
-  n_estimators: 150
+  n_estimators: 250
   criterion: "entropy"
   max_depth: 12
   min_samples_split: 50
@@ -24,3 +24,4 @@ eval:
   model_path: "model/model.pkl"
   eval_csv: "split/test/eval.csv"
   score: "metrics/"
+  png : "evalMetricsPNG/"

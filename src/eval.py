@@ -17,6 +17,7 @@ params = yaml.safe_load(open('params.yaml'))['eval']
 model_path = params['model_path']
 eval_csv_path = params['eval_csv']
 metrics_file = params['score']
+png_file = params['png']
 
 
 # load the model and test csv
@@ -37,13 +38,17 @@ roc_score = roc_auc_score(y_true, y_pred[:, 1])
 fpr, tpr, _ = roc_curve(y_true, y_pred[:, 1])
 
 
-# creating the folders
+# creating the folders seperately
 
 if not (os.path.exists(metrics_file)):
     os.mkdir(metrics_file)
 
+# outs and metrics folders need to be created separately
+if not (os.path.exists(png_file)):
+    os.mkdir(png_file)
+
 metrics_json = os.path.join(metrics_file, 'metrics.json')
-metrics_png = os.path.join(metrics_file, 'metrics.png')
+metrics_png = os.path.join(png_file, 'metrics.png')
 
 with open(metrics_json, 'w') as fjson:
     json.dump({'roc': roc_score}, fjson)

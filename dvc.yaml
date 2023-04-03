@@ -53,6 +53,9 @@ stages:
       - eval.model_path
       - eval.eval_csv
       - eval.score
+      - eval.png
+    outs:
+      - evalMetricsPNG/
     metrics:
       - metrics/metrics.json:
           cache: false
