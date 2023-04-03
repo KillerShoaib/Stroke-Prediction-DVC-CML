@@ -38,10 +38,13 @@ roc_score = roc_auc_score(y_true, y_pred[:, 1])
 fpr, tpr, _ = roc_curve(y_true, y_pred[:, 1])
 
 
-# creating the folders
+# creating the folders seperately
 
-if not (os.path.exists(metrics_file) and os.path.exists(png_file)):
+if not (os.path.exists(metrics_file)):
     os.mkdir(metrics_file)
+
+# outs and metrics folders need to be created separately
+if not (os.path.exists(png_file)):
     os.mkdir(png_file)
 
 metrics_json = os.path.join(metrics_file, 'metrics.json')
